@@ -25,3 +25,5 @@ Route::post('login','SessionsController@store')->name('login'); //登录、创�
 Route::delete('logout','SessionsController@destroy')->name('logout');
 
 Route::get('signup/confirm/{token}','UsersController@confirmEmail')->name('confirm_email');
+
+Route::resource('statuses', 'StatusesController', ['only' => ['store', 'destroy']]);
